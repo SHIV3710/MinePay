@@ -5,7 +5,7 @@ import bcrypt from "bcryptjs";
 export const LoginUser = async (Email:string,Password:string ,dispatch:any) =>  {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.put("https://minepay-git-master-shiv3710s-projects.vercel.app/api/login", {
+        const { data } = await axios.put("https://minepay.onrender.com/api/login", {
             Email : Email,
             Password : Password,
         });
@@ -30,7 +30,7 @@ export const LoginUser = async (Email:string,Password:string ,dispatch:any) =>  
 export const RegisterUser = async (Name:string,Email:string,Password:string,dispatch:any)=>{
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.post("https://minepay-git-master-shiv3710s-projects.vercel.app/api/register", {
+        const { data } = await axios.post("https://minepay.onrender.com/api/register", {
             Name:Name,
             Email : Email,
             Password : Password,
@@ -57,7 +57,7 @@ export const LoadUser = async (dispatch:any) => {
     try {
 
         dispatch(setuserloading(true));
-        const { data } = await axios.get("https://minepay-git-master-shiv3710s-projects.vercel.app/api/loaduser", {
+        const { data } = await axios.get("https://minepay.onrender.com/api/loaduser", {
             headers: { Token: localStorage.getItem("token") },
         });
         if(data.Error) throw new Error(data.Error)
@@ -81,7 +81,7 @@ export const LoadUser = async (dispatch:any) => {
 export const LoadUserCards = async (dispatch:any) => {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.get("https://minepay-git-master-shiv3710s-projects.vercel.app/api/getallcard", {
+        const { data } = await axios.get("https://minepay.onrender.com/api/getallcard", {
             headers: { Token: localStorage.getItem("token") },
         });
         if(data.Error) throw new Error(data.Error)
@@ -96,7 +96,7 @@ export const LoadUserCards = async (dispatch:any) => {
 export const AddCard = async (CardNumber: string, ExpireDate: string, Pin: string, Amount: number, dispatch: any) => {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.post("https://minepay-git-master-shiv3710s-projects.vercel.app/api/addcard", {
+        const { data } = await axios.post("https://minepay.onrender.com/api/addcard", {
             CardNumber,
             ExpireDate,
             Amount,
@@ -121,7 +121,7 @@ export const AddCard = async (CardNumber: string, ExpireDate: string, Pin: strin
 export const UpdateUserProfile = async (Email:string, Name:string, dispatch:any) => {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.put("https://minepay-git-master-shiv3710s-projects.vercel.app/api/updateprofile", {
+        const { data } = await axios.put("https://minepay.onrender.com/api/updateprofile", {
             Email: Email,
             Name : Name,
         },
@@ -147,7 +147,7 @@ export const UpdateUserProfile = async (Email:string, Name:string, dispatch:any)
 export const ChangePassword = async (OldPassword: string, NewPassword: string, dispatch: any) => {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.put("https://minepay-git-master-shiv3710s-projects.vercel.app/api/updatepassword", {
+        const { data } = await axios.put("https://minepay.onrender.com/api/updatepassword", {
             OldPassword,
             NewPassword,
         },
@@ -169,7 +169,7 @@ export const ChangePassword = async (OldPassword: string, NewPassword: string, d
 export const GetAllTransactions = async (dispatch:any) => {
     try {
         dispatch(setuserloading(true));
-        const {data} = await axios.get("https://minepay-git-master-shiv3710s-projects.vercel.app/api/transaction",{headers : { Token: localStorage.getItem('token')} });
+        const {data} = await axios.get("https://minepay.onrender.com/api/transaction",{headers : { Token: localStorage.getItem('token')} });
         if(data.Error) throw new Error(data.Error)
         dispatch(setuserloading(false));
         dispatch(setalltransactions(data.Transaction));
@@ -183,7 +183,7 @@ export const GetAllTransactions = async (dispatch:any) => {
 export const MakeATransaction = async (SenderCardId:string, RecieverCardNumber:number, Amount:number,Pin:number, dispatch:any) => {
     try {
         dispatch(setuserloading(true));
-        const {data} = await axios.put("https://minepay-git-master-shiv3710s-projects.vercel.app/api/transaction",
+        const {data} = await axios.put("https://minepay.onrender.com/api/transaction",
             {
                 SenderCardId,
                 RecieverCardNumber,
@@ -208,7 +208,7 @@ export const MakeATransaction = async (SenderCardId:string, RecieverCardNumber:n
 export const GetAllUsers = async (dispatch:any) => {
     try {
         dispatch(setuserloading(true));
-        const { data } = await axios.get("https://minepay-git-master-shiv3710s-projects.vercel.app/api/allusers",
+        const { data } = await axios.get("https://minepay.onrender.com/api/allusers",
         {
         headers: { Token: localStorage.getItem('token') },
         });

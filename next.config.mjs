@@ -20,7 +20,7 @@ const nextConfig = {
             },
             {
               key: 'Access-Control-Allow-Origin',
-              value: 'https://minepay-git-master-shiv3710s-projects.vercel.app', // Specify your allowed origin
+              value: 'https://minepay.onrender.com', // Specify your allowed origin
             },
             {
               key: 'Access-Control-Allow-Methods',
