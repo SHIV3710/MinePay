@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "../CP"
+		},
+		{
+			"path": "../MineCode"
+		},
+		{
+			"path": "../practice"
+		},
+		{
+			"path": "../mindcase"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"iostream": "cpp",
+			"cmath": "cpp",
+			"ostream": "cpp"
+		}
+	}
+}
