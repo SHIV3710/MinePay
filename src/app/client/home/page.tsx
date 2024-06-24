@@ -10,11 +10,9 @@ const Page = () => {
   const {_id} = useSelector((state:any)=>state.User);
   const dispatch = useDispatch();
   useEffect(() => {
-    LoadUserCards(dispatch);
+    if(_id)
+      LoadUserCards(dispatch);
   }, [_id])
-
-
- 
   return (
     <div className='h-screen w-screen flex flex-col gap-10 m-0 p-0'>
       <Navbar />
