@@ -1,7 +1,6 @@
 "use client"
 
 import { LoadUserCards } from "@/app/apicalls"
-import io from 'Socket.IO-client'
 import Navbar from "@/components/Navbar,"
 import {  useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
